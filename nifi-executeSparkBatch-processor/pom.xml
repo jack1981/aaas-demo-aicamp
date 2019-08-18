@@ -11,10 +11,6 @@
 	<artifactId>nifi-executeSparkBatch-processor</artifactId>
 	<packaging>jar</packaging>
 
-	<properties>
-		<nifi.version>1.7.1</nifi.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 
 	<dependencies>
 		<dependency>
