@@ -47,7 +47,6 @@ https://store.docker.com/editions/community/docker-ce-desktop-windows
 $ docker pull msba6212/aaas-demo-base
 $ docker run -it -p 8080:8080 -p 8443:8443 -p 10000:10000 -p 8998:8998 -p 12345:12345 -p 8088:8088 -p 4040:4040 -p 7077:7077 -e NotebookPort=12345 -e NotebookToken="demo" -e RUNTIME_DRIVER_CORES_ENV=1 -e RUNTIME_DRIVER_MEMORY=2g -e RUNTIME_EXECUTOR_CORES=1 -e RUNTIME_EXECUTOR_MEMORY=4g -e RUNTIME_TOTAL_EXECUTOR_CORES=1 --name demo -h demo msba6212/aaas-demo-base:latest bash
 ```
-```
 - You should enter root@demo:/opt/work# or you can attach it later like this
 
 ```sh
@@ -80,7 +79,7 @@ Ethernet adapter vEthernet (DockerNAT):
 root@demo:/opt/work# export hostIP=10.0.75.1
 ```
 ```sh
-$ docker run -d --name kafka -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=10.0.75.1 --env ADVERTISED_PORT=9092 spotify/kafka
+$ docker run -d --name kafka -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=10.0.75.1 --env ADVERTISED_PORT=9092 msba6212/kafka
 $ docker exec -it kafka /bin/bash
 $ root@70a349c84edd:/# cd /opt/kafka_2.11-0.10.1.0/bin
 $ root@70a349c84edd:/# export KAFKA=10.0.75.1:9092
