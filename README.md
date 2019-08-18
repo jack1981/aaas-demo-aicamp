@@ -100,28 +100,29 @@ root@driver:/home# git clone https://github.com/jack1981/aaas-demo-aicamp.git
 - Build the project with mvn command
 
 ```sh
-root@demo:/home# cd AaaSDemo/
-root@demo:/home/AaaSDemo# mvn clean install
+root@demo:/home# cd aaas-demo-aicamp/
+root@demo:/home/aaas-demo-aicamp# mvn clean install
 ```
 - Move the data files
  
 ```sh
-root@demo:/home/AaaSDemo# cd data
-root@demo:/home/AaaSDemo/data# unzip pcard.zip
-root@demo:/home/AaaSDemo/data# mkdir /opt/work/data
-root@demo:/home/AaaSDemo/data# mv pcard.csv /opt/work/data
-root@demo:/home/AaaSDemo/data# mv offerList.csv /opt/work/data
+root@demo:/home/aaas-demo-aicamp# cd aaas-demo/data
+root@demo:/home/aaas-demo-aicamp/aaas-demo/data# unzip pcard.zip
+root@demo:/home/aaas-demo-aicamp/aaas-demo/data# mkdir /opt/work/data
+root@demo:/home/aaas-demo-aicamp/aaas-demo/data# mv pcard.csv /opt/work/data
+root@demo:/home/aaas-demo-aicamp/aaas-demo/data# mv offerList.csv /opt/work/data
 ```
 - copy dependent jars
 
 ```sh
-root@demo:/home/AaaSDemo/data# cd ..
-root@demo:/home/AaaSDemo# mv target/aaas-demo-1.0-SNAPSHOT.jar aaas-demo.jar
-root@demo:/home/AaaSDemo# cp /opt/work/analytics-zoo-0.4.0-SNAPSHOT/lib/analytics-zoo-bigdl_0.6.0-spark_2.3.1-0.4.0-SNAPSHOT-jar-with-dependencies.jar zoo.jar
-root@demo:/home/AaaSDemo# cp nifi-custom-nar/target/nifi-custom-nar-1.0.1-SNAPSHOT.nar /opt/nifi/nifi-current/lib
-root@demo:/home/AaaSDemo# cp jars/*.jar .
-root@demo:/home/AaaSDemo# cp scripts/*.sh .
-root@demo:/home/AaaSDemo# chmod 777 *
+root@demo:/home/aaas-demo-aicamp/aaas-demo/data# cd ..
+root@demo:/home/aaas-demo-aicamp/aaas-demo# mv target/aaas-demo-1.0-SNAPSHOT.jar aaas-demo.jar
+root@demo:/home/aaas-demo-aicamp/aaas-demo# cp /opt/work/analytics-zoo-0.4.0-SNAPSHOT/lib/analytics-zoo-bigdl_0.6.0-spark_2.3.1-0.4.0-SNAPSHOT-jar-with-dependencies.jar zoo.jar
+root@demo:/home/aaas-demo-aicamp/aaas-demo# cp jars/*.jar .
+root@demo:/home/aaas-demo-aicamp/aaas-demo# cp scripts/*.sh .
+root@demo:/home/aaas-demo-aicamp/aaas-demo# chmod 777 *
+root@demo:/home/aaas-demo-aicamp/aaas-demo# cd ..
+root@demo:/home/aaas-demo-aicamp# cp nifi-custom-nar/target/nifi-custom-nar-1.0.1-SNAPSHOT.nar /opt/nifi/nifi-current/lib
 ```
 
 ## Keras on Spark 
@@ -158,7 +159,7 @@ We will go though this Keras on spark example , you can find it under /Python fo
 - You can create your own run script with different parameters , taking reference of run_als.sh and run_dl.sh
 ### Execute the run default script for Clustering+ALS
 ```sh
-root@driver:/home/AaaSDemo# ./run_als_default.sh
+root@driver:/home/aaas-demo-aicamp/aaas-demo# ./run_als_default.sh
 ```
 ### The major milestones and result of performance metrics from Clustering+ALS
 ```sh
@@ -239,10 +240,9 @@ total precision: 0.8924145700337964
 cluster : 1:Train and Evaluate End
 total time: 460.6690918
 
-```
 ### execute the run default script for Keras (with Intel Analytic ZOO + BigDL) 
 ```sh
-root@driver:/home/AaaSDemo# ./run_dl_default.sh
+root@driver:/home/aaas-demo-aicamp/aaas-demo# ./run_dl_default.sh
 ```
 ### the major milestones and result of performance metrics from Keras
 ```sh
@@ -392,7 +392,7 @@ root@demo:/opt/work# /opt/distribute/livy-bin/bin/livy-server start
 ## Start a Spark Streaming job for streaming model serving
 
 ```sh
-root@driver:/home/AaaSDemo# ./run_dl_streaming.sh
+root@driver:/home/aaas-demo-aicamp/aaas-demo# ./run_dl_streaming.sh
 ```
 
 ## Enjoy the course , code lab and alive demo !!
