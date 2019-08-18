@@ -346,6 +346,9 @@ public class ExecuteSparkBatch extends AbstractProcessor {
 	private JSONObject readJSONObjectFromUrlPOST(String urlString, Map<String, String> headers, String payload,
 			int connectTimeout) throws IOException, JSONException {
 
+		ComponentLog log = getLogger();
+		log.info("urlString->:"+urlString);
+		log.info("payload->:"+payload);
 		HttpURLConnection connection = getConnection(urlString, connectTimeout);
 		connection.setRequestMethod("POST");
 		connection.setDoOutput(true);
