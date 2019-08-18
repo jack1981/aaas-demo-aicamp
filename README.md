@@ -375,9 +375,19 @@ I observed with Deep Learning technologies, the whole data mining process reduce
 We are going to start couple services such as Kafka, NiFi, Livy. For benchmark purpose , we don't need those services , but for the AI as a Service demo which cover the life cycle of a deep learning project , then we need to start them
 
 ## start the relevant services 
+### Tip: By default Livy does not allow local file to be attached to user session, so we need to change the file.local-dir-whitelist
+```sh
+root@demo:/opt/work# vi /opt/distribute/livy-bin/conf/livy.conf
+make sure the livy.file.local-dir-whitelist to be the folder where jars locate
+livy.file.local-dir-whitelist = /home/aaas-demo-aicamp/aaas-demo/
+```
+### start livy service 
+```sh
+root@demo:/opt/work# /opt/distribute/livy-bin/bin/livy-server start
+```
+### start NiFi 
 ```sh
 root@demo:/opt/work# /opt/nifi/nifi-current/bin/nifi.sh start
-root@demo:/opt/work# /opt/distribute/livy-bin/bin/livy-server start
 ```
 ## check the services
 ### livy 
